@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>employment examination</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- bikin bagian pizza -->
+  <h2>Pizza</h2>
+  <div class="pizzas">
+    <!-- bikin card pizza -->
+    <div class="card-pizza">
+      <img src="images-1.jpg" alt="pizza 1" width="200px" height="200px">
+      <h4>Pizza 1</h4>
+      <h5>$8</h5>
+      <input type="radio" name="item-pizza" id="pizza-1" value="8">
+    </div>
+    <div class="card-pizza">
+      <img src="images-4.jpg" alt="pizza 2" width="200px" height="200px">
+      <h4>Pizza 2</h4>
+      <h5>$10</h5>
+      <input type="radio" name="item-pizza" id="pizza-2" value="10">
+    </div>
+    <div class="card-pizza">
+      <img src="images-3.jpg" alt="pizza 3" width="200px" height="200px">
+      <h4>Pizza 3</h4>
+      <h5>$12</h5>
+      <input type="radio" name="item-pizza" id="pizza-3" value="12">
+    </div>
+  </div>
+
+  <!-- bikin bagian Sizes -->
+  <div class="size">
+    <h2>Size</h2>
+    <form>
+      <input type="radio" name="size" value="-1" id="small">Small
+      <input type="radio" name="size" value="0" id="Medium" checked>Medium
+      <input type="radio" name="size" value="2" id="large">Large
+  </form>
+  </div>
+
+  <!-- bikin bagian toppings -->
+  
+  <h2>toppings</h2>
+  <form class="toppings">
+    <div class="card-toppings">
+      <div class="tmp"><input type="checkbox" name="topping" id="avocado" value="1">Avocado</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="broccoli"  value="1">Broccoli</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="onions"  value="1">Onions</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="zucchini" value="1">Zucchini</div>
+    </div>
+    <div class="card-toppings">
+      <div class="tmp"><input type="checkbox" name="topping" id="lobster"  value="2">Lobster</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="oyster" value="2">Oyster</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="salmon" value="2">Salmon</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="tuna" value="2">Tuna</div>
+    </div>
+    <div class="card-toppings">
+      <div class="tmp"><input type="checkbox" name="topping" id="bacon" value="3">Bacon</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="duck" value="3">Duck</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="ham" value="3">Ham</div>
+      <div class="tmp"><input type="checkbox" name="topping" id="sausage" value="3">Sausage</div>
+    </div>
+  </form>
+
+  <!-- Price -->
+  <div class="price">
+    <h3 id="price">Price Total:</h3>
+    <br><br><br>
+  </div>
+
+  <script src="handler.js"></script>
+  <script>
+    let toppings = document.getElementsByName('topping')
+    let pizza = document.getElementsByName('item-pizza')
+    let size = document.getElementsByName('size')
+    for (let i = 0; i < toppings.length; i++) {
+      toppings[i].addEventListener('change', updateMenu)
+    }
+
+    for (let i = 0; i < pizza.length; i++) {
+      pizza[i].addEventListener('change', updateMenu)
+    }
+    
+    for (let i = 0; i < size.length; i++) {
+      size[i].addEventListener('change', updateMenu)
+    }
+  </script>
+</body>
+</html>
